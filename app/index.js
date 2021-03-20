@@ -4,12 +4,13 @@ import {
   DefaultTheme,
   Provider as PaperProvider,
 } from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-// import Navigator from './screens/Navigation';
+import Navigator from './Navigator';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Dashboard from './screens/Dashboard';
 
 const Stack = createStackNavigator();
 
@@ -52,14 +53,15 @@ const theme = {
 
 const App = () => {
   return (
-      <PaperProvider theme={theme}>
-        <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
-      </Stack.Navigator>
-    </NavigationContainer>
-      </PaperProvider>
+    <PaperProvider theme={theme}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 
