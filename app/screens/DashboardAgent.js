@@ -130,7 +130,7 @@ const DashboardAgent = ({navigation}) => {
         <Button
           mode="contained"
           style={{marginRight: 5}}
-          onPress={() => navigation.navigate('Add Products')}>
+          onPress={() => navigation.navigate('View Product')}>
           View Products
         </Button>
       </View>

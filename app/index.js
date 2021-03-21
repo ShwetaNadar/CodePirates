@@ -14,6 +14,7 @@ import AddProducts from './screens/AddProducts';
 import EditProduct from './screens/EditProduct';
 import Dashboard from './screens/Dashboard';
 import DashboardAgent from './screens/DashboardAgent';
+import ViewProduct from './screens/ViewProduct';
 
 const Stack = createStackNavigator();
 
@@ -63,8 +64,9 @@ const App = () => {
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Add Products" component={AddProducts} />
           <Stack.Screen name="Edit Product" component={EditProduct} />
-          <Stack.Screen name="Dashboard" component={Dashboard} />
-          <Stack.Screen name="DashboardAgent" component={DashboardAgent} />
+          <Stack.Screen name="Dashboard Admin" component={Dashboard} />
+          <Stack.Screen name="Dashboard Agent" component={DashboardAgent} />
+          <Stack.Screen name="View Product" component={ViewProduct} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

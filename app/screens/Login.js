@@ -35,9 +35,9 @@ const Login = ({navigation}) => {
         mode="contained"
         onPress={() => {
           if (email === 'admin123@gmail.com') {
-            navigation.navigate('Dashboard');
+            navigation.navigate('Dashboard Admin');
           } else {
-            navigation.navigate('DashboardAgent');
+            navigation.navigate('Dashboard Agent');
           }
         }}
         style={{marginTop: 12}}>
