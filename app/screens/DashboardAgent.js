@@ -52,7 +52,7 @@ const DashboardAgent = ({navigation}) => {
           onValueChange={(itemValue, itemIndex) =>
             setSelectedLanguage(itemValue)
           }>
-          <Picker.Item label="Select Company" value="" />
+          <Picker.Item label="Select Category" value="" />
           <Picker.Item label="Mobile" value="mobile" />
           <Picker.Item label="Television" value="tv" />
         </Picker>
@@ -130,7 +130,7 @@ const DashboardAgent = ({navigation}) => {
         <Button
           mode="contained"
           style={{marginRight: 5}}
-          onPress={() => navigation.navigate('View Product')}>
+          onPress={() => navigation.navigate('View Products')}>
           View Products
         </Button>
       </View>

@@ -10,6 +10,8 @@ import {
 } from 'react-native-paper';
 import {Picker} from '@react-native-picker/picker';
 import ImagePicker from 'react-native-image-crop-picker';
+import {useSelector, useDispatch} from 'react-redux';
+import {showCart} from '../actions/actions';
 
 const EditProduct = () => {
   const [selectedCompany, setSelectedCompany] = useState();
@@ -17,6 +19,13 @@ const EditProduct = () => {
   const [selectedProduct, setSelectedProduct] = useState();
   const [visible, setVisible] = useState(false);
   const [edit, setEdit] = useState(false);
+  const [price, setPrice] = useState('₹78,990');
+  const disp = useDispatch();
+  const cart = useSelector(state => state.reducer.cart);
+
+  const handleSubmitCart = () => {
+    disp(showCart());
+  };
 
   const companies = [
     {label: 'Select Company', value: ''},
@@ -72,8 +81,8 @@ const EditProduct = () => {
           }
           style={{margin: 5}}>
           <Picker.Item label="Select Category" value="" />
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Mobile Phones" value="java" />
+          <Picker.Item label="Laptop" value="js" />
         </Picker>
         <Picker
           mode="dropdown"
@@ -83,15 +92,23 @@ const EditProduct = () => {
           }
           style={{margin: 5}}>
           <Picker.Item label="Select Product" value="" />
-          <Picker.Item label="Java" value="java" />
-          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Legion Y7000 SE Laptop" value="java" />
+          {/* <Picker.Item label="JavaScript" value="js" /> */}
         </Picker>
         <Button
           mode="contained"
           style={{margin: 8}}
           onPress={() => setVisible(true)}>
+          {/* // onPress={handleSubmitCart}> */}
           Search Product
         </Button>
+        {/* <Button
+          mode="contained"
+          style={{margin: 8}}
+          // onPress={() => setVisible(true)}
+          onPress={() => alert(JSON.stringify(cart))}>
+          Show Product
+        </Button> */}
         {visible && (
           <>
             {edit ? (
@@ -113,8 +130,9 @@ const EditProduct = () => {
                 />
                 <TextInput
                   label="MRP"
-                  value="₹78,990"
-                  // onChangeText={text => setEmail(text)}
+                  // value="₹78,990"
+                  value={price}
+                  onChangeText={text => setPrice(text)}
                   style={{marginVertical: 8, margin: 12}}
                 />
                 <TextInput
@@ -129,7 +147,13 @@ const EditProduct = () => {
                   // onChangeText={text => setEmail(text)}
                   style={{marginVertical: 8, margin: 12}}
                 />
-                <Button onPress={() => setEdit(true)}>Done</Button>
+                <Button
+                  onPress={() => {
+                    setPrice('₹68,990');
+                    setEdit(false);
+                  }}>
+                  Done
+                </Button>
               </>
             ) : (
               <>
@@ -151,7 +175,7 @@ const EditProduct = () => {
                   </DataTable.Row>
                   <DataTable.Row>
                     <DataTable.Cell>Price</DataTable.Cell>
-                    <DataTable.Cell>₹78,990</DataTable.Cell>
+                    <DataTable.Cell>{price}</DataTable.Cell>
                   </DataTable.Row>
                   <DataTable.Row>
                     <DataTable.Cell>Buying Date</DataTable.Cell>

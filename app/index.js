@@ -15,7 +15,8 @@ import EditProduct from './screens/EditProduct';
 import Dashboard from './screens/Dashboard';
 import DashboardAgent from './screens/DashboardAgent';
 import ViewProduct from './screens/ViewProduct';
-
+import store from './config/store';
+import {Provider} from 'react-redux';
 const Stack = createStackNavigator();
 
 /* App Fonts */
@@ -57,19 +58,21 @@ const theme = {
 
 const App = () => {
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="Add Products" component={AddProducts} />
-          <Stack.Screen name="Edit Product" component={EditProduct} />
-          <Stack.Screen name="Dashboard Admin" component={Dashboard} />
-          <Stack.Screen name="Dashboard Agent" component={DashboardAgent} />
-          <Stack.Screen name="View Product" component={ViewProduct} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <Provider store={store}>
+      <PaperProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Add Products" component={AddProducts} />
+            <Stack.Screen name="Edit Product" component={EditProduct} />
+            <Stack.Screen name="Dashboard Admin" component={Dashboard} />
+            <Stack.Screen name="Dashboard Agent" component={DashboardAgent} />
+            <Stack.Screen name="View Products" component={ViewProduct} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </Provider>
   );
 };
 

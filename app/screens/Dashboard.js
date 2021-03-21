@@ -52,13 +52,13 @@ const Dashboard = ({navigation}) => {
           onValueChange={(itemValue, itemIndex) =>
             setSelectedLanguage(itemValue)
           }>
-          <Picker.Item label="Select Company" value="" />
-          <Picker.Item label="Mobile" value="mobile" />
-          <Picker.Item label="Television" value="tv" />
+          <Picker.Item label="Select Agent" value="" />
+          <Picker.Item label="Agent 1" value="Agent 1" />
+          <Picker.Item label="Agent 2" value="Agent 2" />
         </Picker>
       </View>
       <View style={{marginLeft: 15}}>
-        {selectedLanguage ? (
+        {selectedLanguage === 'Agent 1' ? (
           <>
             <Text>Sales of the products</Text>
             <LineChart
