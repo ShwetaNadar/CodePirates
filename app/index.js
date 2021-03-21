@@ -7,11 +7,12 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-// import Navigator from './screens/Navigation';
+import Navigator from './Navigator';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import AddProducts from './screens/AddProducts';
 import EditProduct from './screens/EditProduct';
+import Dashboard from './screens/Dashboard';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +62,7 @@ const App = () => {
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Add Products" component={AddProducts} />
           <Stack.Screen name="Edit Product" component={EditProduct} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

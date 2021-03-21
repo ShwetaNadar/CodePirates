@@ -32,8 +32,9 @@ const Login = ({navigation}) => {
       />
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('Edit Product')}
+        onPress={() => navigation.navigate('Dashboard')}
         style={{marginTop: 12}}>
+        {' '}
         Login
       </Button>
       <Text style={{margin: 8}}>
