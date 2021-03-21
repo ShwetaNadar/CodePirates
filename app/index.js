@@ -11,6 +11,7 @@ import Navigator from './Navigator';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Dashboard from './screens/Dashboard';
+import ViewProduct from './screens/ViewProduct';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,7 @@ const App = () => {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="ViewProduct" component={ViewProduct} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

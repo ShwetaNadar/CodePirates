@@ -32,7 +32,7 @@ const Login = ({navigation}) => {
       />
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('Dashboard')}
+        onPress={() => navigation.navigate('ViewProduct')}
         style={{marginTop: 12}}>
         {' '}
         Login
