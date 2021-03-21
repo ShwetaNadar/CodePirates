@@ -8,8 +8,16 @@ const Register = () => {
       <TextInput style={styles.input} placeholder="Name" />
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Username" />
-      <TextInput style={styles.input} placeholder="Password" />
-      <TextInput style={styles.input} placeholder="Confirm Password" />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        secureTextEntry={true}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirm Password"
+        secureTextEntry={true}
+      />
       <Button>REGISTER</Button>
     </View>
   );

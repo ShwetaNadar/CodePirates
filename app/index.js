@@ -13,6 +13,7 @@ import Register from './screens/Register';
 import AddProducts from './screens/AddProducts';
 import EditProduct from './screens/EditProduct';
 import Dashboard from './screens/Dashboard';
+import DashboardAgent from './screens/DashboardAgent';
 
 const Stack = createStackNavigator();
 
@@ -63,6 +64,7 @@ const App = () => {
           <Stack.Screen name="Add Products" component={AddProducts} />
           <Stack.Screen name="Edit Product" component={EditProduct} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="DashboardAgent" component={DashboardAgent} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

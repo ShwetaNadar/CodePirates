@@ -47,125 +47,130 @@ const EditProduct = () => {
   ];
 
   return (
-    <View>
-      {/* <View style={{flexDirection: 'row'}}> */}
-      <Picker
-        mode="dropdown"
-        selectedValue={selectedCompany}
-        onValueChange={(itemValue, itemIndex) => setSelectedCompany(itemValue)}
-        style={{margin: 5}}>
-        {companies.map(item => (
-          <Picker.Item key={item.value} {...item} />
-        ))}
-        {/* <Picker.Item label="Select Company" value="" />
+    <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={40}>
+      <View>
+        {/* <View style={{flexDirection: 'row'}}> */}
+        <Picker
+          mode="dropdown"
+          selectedValue={selectedCompany}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedCompany(itemValue)
+          }
+          style={{margin: 5}}>
+          {companies.map(item => (
+            <Picker.Item key={item.value} {...item} />
+          ))}
+          {/* <Picker.Item label="Select Company" value="" />
         <Picker.Item label="Java" value="java" />
         <Picker.Item label="JavaScript" value="js" /> */}
-      </Picker>
-      <Picker
-        mode="dropdown"
-        selectedValue={selectedCategory}
-        onValueChange={(itemValue, itemIndex) => setSelectedCategory(itemValue)}
-        style={{margin: 5}}>
-        <Picker.Item label="Select Category" value="" />
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
-      <Picker
-        mode="dropdown"
-        selectedValue={selectedProduct}
-        onValueChange={(itemValue, itemIndex) => setSelectedProduct(itemValue)}
-        style={{margin: 5}}>
-        <Picker.Item label="Select Product" value="" />
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
-      <Button
-        mode="contained"
-        style={{margin: 8}}
-        onPress={() => setVisible(true)}>
-        Search Product
-      </Button>
-      {visible && (
-        <>
-          {edit ? (
-            <>
-              <DataTable>
-                <DataTable.Row>
-                  <DataTable.Cell>Product Name</DataTable.Cell>
-                  <DataTable.Cell>
-                    <TextInput
-                      //   label="Legion Y7000 SE Laptop"
-                      style={{height: 36, height: 60}}
-                      value="Legion Y7000 SE Laptop"
-                      // onChangeText={text => setPwd(text)}
-                    />
-                  </DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Specifications</DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text>
-                      This 15.6-inch laptop gives you exactly what you need for
-                      a gaming experience that pushes performance and
-                      portability even further. Its 9th Generation Intel® Core™
-                      processors deliver desktop-like performance.
-                    </Text>
-                  </DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Price</DataTable.Cell>
-                  <DataTable.Cell>₹78,990</DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Buying Date</DataTable.Cell>
-                  <DataTable.Cell>12/2/2020</DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Selling Date</DataTable.Cell>
-                  <DataTable.Cell>14/12/2020</DataTable.Cell>
-                </DataTable.Row>
-              </DataTable>
-              <Button onPress={() => setEdit(true)}>Done</Button>
-            </>
-          ) : (
-            <>
-              <DataTable>
-                <DataTable.Row>
-                  <DataTable.Cell>Product Name</DataTable.Cell>
-                  <DataTable.Cell>Legion Y7000 SE Laptop</DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Specifications</DataTable.Cell>
-                  <DataTable.Cell>
-                    <Text>
-                      This 15.6-inch laptop gives you exactly what you need for
-                      a gaming experience that pushes performance and
-                      portability even further. Its 9th Generation Intel® Core™
-                      processors deliver desktop-like performance.
-                    </Text>
-                  </DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Price</DataTable.Cell>
-                  <DataTable.Cell>₹78,990</DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Buying Date</DataTable.Cell>
-                  <DataTable.Cell>12/2/2020</DataTable.Cell>
-                </DataTable.Row>
-                <DataTable.Row>
-                  <DataTable.Cell>Selling Date</DataTable.Cell>
-                  <DataTable.Cell>14/12/2020</DataTable.Cell>
-                </DataTable.Row>
-              </DataTable>
-              <Button onPress={() => setEdit(true)}>Edit</Button>
-            </>
-          )}
-        </>
-      )}
+        </Picker>
+        <Picker
+          mode="dropdown"
+          selectedValue={selectedCategory}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedCategory(itemValue)
+          }
+          style={{margin: 5}}>
+          <Picker.Item label="Select Category" value="" />
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
+        <Picker
+          mode="dropdown"
+          selectedValue={selectedProduct}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedProduct(itemValue)
+          }
+          style={{margin: 5}}>
+          <Picker.Item label="Select Product" value="" />
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
+        <Button
+          mode="contained"
+          style={{margin: 8}}
+          onPress={() => setVisible(true)}>
+          Search Product
+        </Button>
+        {visible && (
+          <>
+            {edit ? (
+              <>
+                <TextInput
+                  label="Product Name"
+                  value="Legion Y7000 SE Laptop"
+                  // onChangeText={text => setEmail(text)}
+                  style={{marginVertical: 8, margin: 12}}
+                />
+                <TextInput
+                  label="Specifications of device"
+                  value="This 15.6-inch laptop gives you exactly what you need for
+                  a gaming experience that pushes performance and
+                  portability even further. Its 9th Generation Intel® Core™
+                  processors deliver desktop-like performance."
+                  // onChangeText={text => setEmail(text)}
+                  style={{marginVertical: 8, margin: 12}}
+                />
+                <TextInput
+                  label="MRP"
+                  value="₹78,990"
+                  // onChangeText={text => setEmail(text)}
+                  style={{marginVertical: 8, margin: 12}}
+                />
+                <TextInput
+                  label="Buying Date"
+                  value="12/2/2020"
+                  // onChangeText={text => setEmail(text)}
+                  style={{marginVertical: 8, margin: 12}}
+                />
+                <TextInput
+                  label="Selling Date"
+                  value="14/12/2020"
+                  // onChangeText={text => setEmail(text)}
+                  style={{marginVertical: 8, margin: 12}}
+                />
+                <Button onPress={() => setEdit(true)}>Done</Button>
+              </>
+            ) : (
+              <>
+                <DataTable>
+                  <DataTable.Row>
+                    <DataTable.Cell>Product Name</DataTable.Cell>
+                    <DataTable.Cell>Legion Y7000 SE Laptop</DataTable.Cell>
+                  </DataTable.Row>
+                  <DataTable.Row>
+                    <DataTable.Cell>Specifications</DataTable.Cell>
+                    <DataTable.Cell>
+                      <Text>
+                        This 15.6-inch laptop gives you exactly what you need
+                        for a gaming experience that pushes performance and
+                        portability even further. Its 9th Generation Intel®
+                        Core™ processors deliver desktop-like performance.
+                      </Text>
+                    </DataTable.Cell>
+                  </DataTable.Row>
+                  <DataTable.Row>
+                    <DataTable.Cell>Price</DataTable.Cell>
+                    <DataTable.Cell>₹78,990</DataTable.Cell>
+                  </DataTable.Row>
+                  <DataTable.Row>
+                    <DataTable.Cell>Buying Date</DataTable.Cell>
+                    <DataTable.Cell>12/2/2020</DataTable.Cell>
+                  </DataTable.Row>
+                  <DataTable.Row>
+                    <DataTable.Cell>Selling Date</DataTable.Cell>
+                    <DataTable.Cell>14/12/2020</DataTable.Cell>
+                  </DataTable.Row>
+                </DataTable>
+                <Button onPress={() => setEdit(true)}>Edit</Button>
+              </>
+            )}
+          </>
+        )}
 
-      {/* </View> */}
-    </View>
+        {/* </View> */}
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 

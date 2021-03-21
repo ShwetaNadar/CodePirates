@@ -13,12 +13,12 @@ import {
 } from 'react-native-paper';
 import {Picker} from '@react-native-picker/picker';
 
-const Dashboard = ({navigation}) => {
+const DashboardAgent = ({navigation}) => {
   const line = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
     datasets: [
       {
-        data: [200, 450, 280, 800, 990, 430],
+        data: [300, 550, 180, 600, 890, 530],
         strokeWidth: 2, // optional
       },
     ],
@@ -27,7 +27,7 @@ const Dashboard = ({navigation}) => {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
     datasets: [
       {
-        data: [125, 587, 254, 150, 250, 452],
+        data: [225, 897, 654, 160, 550, 452],
         strokeWidth: 2, // optional
       },
     ],
@@ -131,12 +131,7 @@ const Dashboard = ({navigation}) => {
           mode="contained"
           style={{marginRight: 5}}
           onPress={() => navigation.navigate('Add Products')}>
-          Add Products
-        </Button>
-        <Button
-          mode="contained"
-          onPress={() => navigation.navigate('Edit Product')}>
-          Edit Product
+          View Products
         </Button>
       </View>
       {/* <Barcode value="Hello World" format="CODE128" />; */}
@@ -144,4 +139,4 @@ const Dashboard = ({navigation}) => {
   );
 };
 
-export default Dashboard;
+export default DashboardAgent;

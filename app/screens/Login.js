@@ -29,12 +29,18 @@ const Login = ({navigation}) => {
         label="Password"
         value={pwd}
         onChangeText={text => setPwd(text)}
+        secureTextEntry={true}
       />
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('Dashboard')}
+        onPress={() => {
+          if (email === 'admin123@gmail.com') {
+            navigation.navigate('Dashboard');
+          } else {
+            navigation.navigate('DashboardAgent');
+          }
+        }}
         style={{marginTop: 12}}>
-        {' '}
         Login
       </Button>
       <Text style={{margin: 8}}>

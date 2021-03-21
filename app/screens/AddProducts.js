@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, KeyboardAvoidingView} from 'react-native';
+import {View, KeyboardAvoidingView, Image} from 'react-native';
 import {
   useTheme,
   TextInput,
@@ -14,6 +14,7 @@ const AddProducts = ({navigation}) => {
   const [selectedLanguage, setSelectedLanguage] = useState();
   const [value, setValue] = useState('left');
   const [add, setAdd] = useState('product');
+  const [imageUri, setImageUri] = useState();
 
   const theme = useTheme();
 
@@ -90,6 +91,7 @@ const AddProducts = ({navigation}) => {
                         cropping: true,
                       }).then(image => {
                         console.log(image);
+                        setImageUri(image);
                       });
                     }}>
                     Click Picture
@@ -102,11 +104,19 @@ const AddProducts = ({navigation}) => {
                         cropping: true,
                       }).then(image => {
                         console.log(image);
+                        setImageUri(image);
                       });
                     }}>
                     Upload from Gallery
                   </Button>
                 </View>
+                <Image
+                  style={{width: 50, height: 50}}
+                  source={{
+                    // uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    uri: imageUri,
+                  }}
+                />
                 <Button mode="contained" style={{margin: 8}}>
                   Add Category
                 </Button>
@@ -179,6 +189,7 @@ const AddProducts = ({navigation}) => {
                         cropping: true,
                       }).then(image => {
                         console.log(image);
+                        setImageUri(image);
                       });
                     }}>
                     Click Picture
@@ -191,11 +202,19 @@ const AddProducts = ({navigation}) => {
                         cropping: true,
                       }).then(image => {
                         console.log(image);
+                        setImageUri(image);
                       });
                     }}>
                     Upload from Gallery
                   </Button>
                 </View>
+                <Image
+                  style={{width: 50, height: 50}}
+                  source={{
+                    // uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    uri: imageUri,
+                  }}
+                />
                 <Button mode="contained" style={{margin: 8}}>
                   Add Product
                 </Button>
